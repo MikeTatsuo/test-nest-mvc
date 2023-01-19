@@ -1,11 +1,11 @@
-import { args, product, channel, defaultViewport } from './puppeteer.utils';
+import { args, defaultViewport } from './puppeteer.utils';
 
 export const puppeteerOptions = {
   // extraPrefsFirefox: {},
 
-  product,
+  // product,
 
-  channel,
+  // channel,
   // Chrome Release Channel
 
   // dumpio: true,

@@ -2853,7 +2853,7 @@ export const args = [
   //	Run the GPU process as a thread in the browser process.
 
   // '--incognito',
-  '//	Forces Incognito mode even if user data directory is specified using the --user-data-dir switch.',
+  //	Forces Incognito mode even if user data directory is specified using the --user-data-dir switch.',
 
   // '--init-done-notifier',
   //	The handle of an event to signal when the initialization of the main process is complete (including loading all DLL's). This is used by the integration test to check that forbidden modules aren't loaded outside the sandbox. If this is set, the main process will signal the event and then wait for the integration test to signal it as well before continuing. Ignored in official builds.
@@ -3310,7 +3310,7 @@ export const args = [
   // '--no-service-autorun',
   //	Disables the service process from adding itself as an autorun process. This does not delete existing autorun registrations, it just prevents the service from registering a new one.
 
-  '--no-startup-window',
+  // '--no-startup-window',
   //	Does not automatically open a browser window on startup (used when launching Chrome for the purpose of hosting background apps).
 
   // '--no-system-proxy-config-service',
