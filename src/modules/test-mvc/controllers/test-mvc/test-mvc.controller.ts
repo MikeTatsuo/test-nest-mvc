@@ -1,13 +1,9 @@
 import { Controller, Get, Render } from '@nestjs/common';
-import { TestMvcAditionalService } from 'src/aditional-modules/test-mvc-aditional/service/test-mvc-aditional/test-mvc-aditional.service';
 import { TestMvcService } from '../../services/test-mvc/test-mvc.service';
 
 @Controller('/api/test-mvc')
 export class TestMvcController {
-  constructor(
-    private readonly testMVCService: TestMvcService,
-    private readonly aditionalService: TestMvcAditionalService,
-  ) {}
+  constructor(private readonly testMVCService: TestMvcService) {}
 
   @Get('/test-api')
   @Render('index')
@@ -32,13 +28,5 @@ export class TestMvcController {
     const message = await this.testMVCService.getDataWithAwait();
 
     return { message };
-  }
-
-  @Get('/with-aditional-data')
-  @Render('index')
-  async renderWithAditionalData() {
-    const aditionalData = await this.aditionalService.getAditionalData();
-
-    return { message: `${aditionalData}: test mvc` };
   }
 }

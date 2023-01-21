@@ -1,13 +1,21 @@
+import { PdfOptions } from 'src/types/pdfOptions.type';
 import { paperFormat } from './pdf.utils';
 
-export const pdfOptions = {
+export const pdfOptions = ({
+  format = paperFormat.A4,
+  landscape = true,
+  omitBackground = false,
+  pageRanges = '',
+  printBackground = true,
+  scale = 1,
+}: PdfOptions) => ({
   // displayHeaderFooter: true,
   // Whether to show the header and footer.
 
   // footerTemplate: '',
   // HTML template for the print footer. Has the same constraints and support for special classes as PDFOptions.headerTemplate.
 
-  format: paperFormat.A4,
+  format,
 
   // headerTemplate: '',
   // HTML template for the print header. Should be valid HTML with the following classes used to inject values into them:
@@ -20,7 +28,7 @@ export const pdfOptions = {
   // height: string | number
   // Sets the height of paper. You can pass in a number or a string with a unit.
 
-  landscape: false,
+  landscape,
   // Whether to print in landscape orientation.
 
   // margin:	{
@@ -31,10 +39,10 @@ export const pdfOptions = {
   // },
   // Set the PDF margins.	no margins are set.
 
-  // omitBackground: true,
+  omitBackground,
   // Hides default white background and allows generating pdfs with transparency.
 
-  pageRanges: '',
+  pageRanges,
   // Paper ranges to print, e.g. 1-5, 8, 11-13.	The empty string, which means all pages are printed.
 
   path: '',
@@ -44,10 +52,10 @@ export const pdfOptions = {
   // Give any CSS @page size declared in the page priority over what is declared in the width or height or format option.
   // 'false' will scale the content to fit the paper size.
 
-  printBackground: true,
+  printBackground,
   // Set to true to print background graphics.
 
-  scale: 1,
+  scale,
   // Scales the rendering of the web page. Amount must be between 0.1 and 2.
 
   timeout: 10000,
@@ -55,4 +63,4 @@ export const pdfOptions = {
 
   // width: string | number
   // Sets the width of paper. You can pass in a number or a string with a unit.
-};
+});
